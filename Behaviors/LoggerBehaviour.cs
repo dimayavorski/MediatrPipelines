@@ -4,8 +4,8 @@ using MediatR;
 
 namespace MideiatrPipelinesApi.Behaviors
 {
-	public class LoggerBehaviour<TRequest, TResponse>: IPipelineBehavior<TRequest, TResponse>	
-	{
+	public class LoggerBehaviour<TRequest, TResponse>: IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
+    {
         private readonly ILogger<LoggerBehaviour<TRequest, TResponse>> _logger;
 
         public LoggerBehaviour(ILogger<LoggerBehaviour<TRequest, TResponse>> logger)

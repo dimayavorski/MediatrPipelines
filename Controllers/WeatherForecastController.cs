@@ -23,4 +23,10 @@ public class WeatherForecastController : ControllerBase
         var result = await _mediatr.Send(new WeatherForecastQuery());
         return Ok(result);
     }
+    [HttpPost(Name = "Create")]
+    public async Task<IActionResult> Post(CreateWeatherForecastCommand command)
+    {
+        await _mediatr.Send(command);
+        return Ok();
+    }
 }

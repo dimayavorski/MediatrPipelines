@@ -9,19 +9,28 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.2" />
     <PackageReference Include="Mediatr" Version="12.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="FluentValidation" Version="11.5.2" />
+    <PackageReference Include="LanguageExt.Core" Version="4.4.3" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Queries\" />
     <None Remove="Queries\Handlers\" />
     <None Remove="Behaviors\" />
+    <None Remove="FluentValidation" />
+    <None Remove="LanguageExt.Core" />
+    <None Remove="Commands\" />
+    <None Remove="Commands\Handlers\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Queries\" />
     <Folder Include="Queries\Handlers\" />
     <Folder Include="Behaviors\" />
+    <Folder Include="Commands\" />
+    <Folder Include="Commands\Handlers\" />
   </ItemGroup>
 </Project>
